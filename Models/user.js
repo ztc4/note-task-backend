@@ -57,9 +57,9 @@ const userSchema = new mongoose.Schema({
 
 
 
-userSchema.statics.Login = async(username, password)=>{
+userSchema.statics.Login = async(email, password)=>{
 
-    try{const user = await User.findOne({username: username})
+    try{const user = await User.findOne({email: email})
     console.log(user)
     if(!user){
       throw new Error("User doesn't exist")

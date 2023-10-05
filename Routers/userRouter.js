@@ -33,7 +33,7 @@ router.post("/user/signup", async(req,res)=>{
 // Login
 
 router.post("/user/login", async( req,res)=>{
-try{    const user = await User.Login(req.body.username, req.body.password)
+try{    const user = await User.Login(req.body.email, req.body.password)
     console.log(user)
     if(user == false){
         throw new Error("User wasn't found")
